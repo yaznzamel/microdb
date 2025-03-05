@@ -30,6 +30,9 @@ make clean // remove and clean the objects
 
 
 
+### Tools to be implemented in this project
+
+1. sql parser : tokenization --> parsing --> execution 
 
 
 ### Basic Operations

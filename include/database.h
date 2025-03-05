@@ -1,41 +1,31 @@
-// /src/database.h
 #ifndef DATABASE_H
 #define DATABASE_H
 
+#include <stdio.h>
 
+#define MAX_NAME_LENGTH 100  // Limit for the name field
 
-#define MAX_NAME_LENGTH 100
-
+// Record structure (fixed size)
 typedef struct {
     int id;
     char name[MAX_NAME_LENGTH];
     int age;
+    int is_deleted;
 } Record;
 
 
-#include <stdio.h>
-#include <string.h>
-
-#define MAX_NAME_LENGTH 100
-
-typedef struct {
-    int id;                // Primary Key
-    char name[MAX_NAME_LENGTH];  // User name
-    int age;               // User age
-} User;
+void insert_user(const char *filename, Record *rec);
+void select_users(const char *filename);
 
 
-void write_record(FILE *file, Record *rec);
-void read_record(FILE *file, long offset, Record *rec);
+// WAL functions 
+void delete_user(const char *filename , int id);
+void log_delete(int id);
+int is_deleted(int id);
 
 
-// // Function prototypes for user operations
-// void insert_user(const char *filename, Record *rec);
-// void select_users(const char *filename);
-// // void delete_user(const char *filename, int id);
-
-#endif // DATABASE_H
+// VACUUM cleanup
+void vacuum_database(const char *filename);
 
 
-
-
+#endif  // DATABASE_H
