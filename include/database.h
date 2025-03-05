@@ -29,10 +29,10 @@ void write_record(FILE *file, Record *rec);
 void read_record(FILE *file, long offset, Record *rec);
 
 
-// Function prototypes for user operations
-void insert_user(const char *filename, Record *rec);
-void select_users(const char *filename);
-void delete_user(const char *filename, int id);
+// // Function prototypes for user operations
+// void insert_user(const char *filename, Record *rec);
+// void select_users(const char *filename);
+// // void delete_user(const char *filename, int id);
 
 #endif // DATABASE_H
 

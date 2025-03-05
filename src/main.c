@@ -51,33 +51,34 @@ int old(){
 #define MAX_QUERY_LEN 1024
 
 int main() {
-    char query[MAX_QUERY_LEN];
+    // char query[MAX_QUERY_LEN];
     
     printf("Welcome to the simple database. Type 'EXIT' to quit.\n");
 
-    // Interactive loop to accept user input
-    while (1) {
-        // Prompt user for a query
-        printf("\nEnter SQL query: ");
+    old();
+    // // Interactive loop to accept user input
+    // while (1) {
+    //     // Prompt user for a query
+    //     printf("\nEnter SQL query: ");
         
-        // Read the input query from user
-        if (fgets(query, sizeof(query), stdin) == NULL) {
-            printf("Error reading input.\n");
-            continue;
-        }
+    //     // Read the input query from user
+    //     if (fgets(query, sizeof(query), stdin) == NULL) {
+    //         printf("Error reading input.\n");
+    //         continue;
+    //     }
 
-        // Remove trailing newline character from fgets
-        query[strcspn(query, "\n")] = 0;
+    //     // Remove trailing newline character from fgets
+    //     query[strcspn(query, "\n")] = 0;
 
-        // Exit if user types "EXIT"
-        if (strcmp(query, "EXIT") == 0) {
-            printf("Exiting the database.\n");
-            break;
-        }
+    //     // Exit if user types "EXIT"
+    //     if (strcmp(query, "EXIT") == 0) {
+    //         printf("Exiting the database.\n");
+    //         break;
+    //     }
 
-        // Process the SQL query
-        sql_interpreter(query);
-    }
+    //     // Process the SQL query
+    //     sql_interpreter(query);
+    // }
 
     return 0;
 }

@@ -32,7 +32,9 @@ make clean // remove and clean the objects
 
 
 
-### Project Structure 
+### Basic Operations
+
+The project initially starts with three basic files : 
 
 ```
 /mini_db_project
@@ -49,3 +51,4 @@ make clean // remove and clean the objects
 └── Makefile                 # To easily compile the project.
 
 ```
+
